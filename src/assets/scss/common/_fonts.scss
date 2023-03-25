@@ -1,0 +1,9 @@
+$montserrat: ('Regular', 400), ('Bold', 700), ('Medium', 500);
+$raleway: ('Regular', 400), ('Bold', 700);
+
+@each $name, $weight in $montserrat {
+  @include fontFace('montserrat', 'Montserrat/Montserrat-', $name, 'ttf', 'truetype', $weight)
+}
+@each $name, $weight in $raleway {
+  @include fontFace('raleway', 'Raleway/Raleway-', $name, 'ttf', 'truetype', $weight)
+}

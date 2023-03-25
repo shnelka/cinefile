@@ -1,0 +1,24 @@
+:root{
+  --m: 'montserrat';
+  --r: 'raleway';
+}
+$m: var(--m);
+$r: var(--r);
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+.container{
+  @include container();
+  min-height: 40px;
+  border: 1px solid red;
+  font-family: $r;
+}
+body{
+  background: #141414;
+}

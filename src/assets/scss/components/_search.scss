@@ -1,0 +1,25 @@
+.main-search{
+  margin-top: 120px;
+  margin-bottom: 70px;
+  &__input{
+    margin-bottom: 30px;
+    width: 100%;
+    input{
+      width: 100%;
+      background: #ffffff;
+      border: none;
+      outline: none;
+      border-radius: 10px;
+      padding: 20px;
+      @include font(18px, 21px, #141414, 700);
+      &::placeholder{
+        color: #141414;
+      }
+    }
+  }
+  &__content{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 22px;
+  }
+}

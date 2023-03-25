@@ -1,0 +1,29 @@
+@mixin media($size) {
+  @media (max-width: #{$size}px) {
+    @content;
+  }
+}
+@mixin container() {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  @include media(1400){max-width: 1140px;}
+  @include media(1200){max-width: 960px;}
+  @include media(992){max-width: 720px;}
+  @include media(768){max-width: 540px;}
+  @include media(568){max-width: 100%}
+}
+@mixin fontFace($name, $url, $nameFont, $ext, $format, $weight) {
+  @font-face {
+    font-family: $name;
+    src: url('../fonts/#{$url}#{$nameFont}.#{$ext}') format($format);
+    font-weight: $weight;
+  }
+}
+@mixin font($fz: null, $lh: null, $c: null, $fw: null) {
+  font-size: $fz;
+  line-height: $lh;
+  color: $c;
+  font-weight: $fw;
+}

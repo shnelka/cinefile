@@ -1,0 +1,131 @@
+.main__upcoming{
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: black;
+  overflow: hidden;
+  &-item{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    &-img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -10;
+    }
+    &::before{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(20, 20, 20, 0.76);
+      content: '';
+      top: 0;
+      left: 0;
+      z-index: -9;
+    }
+  }
+  &-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    text-align: center;
+    &-title{
+      @include font(70px, 80px, #ffffff, 700)
+    }
+    &-text{
+      @include font(20px, 30px, #ffffff);
+      width: 80%;
+    }
+  }
+  &-next{
+    max-width: 576px;
+    width: 100%;
+    height: 100px;
+    background: #000000;
+    border-radius: 10px;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    &-img{
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      object-fit: cover;
+    }
+    &-text{
+      width: 100%;
+      height: 100%;
+      position: relative;
+      background: linear-gradient(90deg, #000000 55.64%, rgba(0, 0, 0, 0) 100%);
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      font-family: $r;
+      h4{
+        @include font(18px, 21px, #ffffff, 700);
+      }
+      span{
+        @include font(16px, 18px, #ffffff);
+      }
+    }
+    &-line{
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.5);
+      bottom: 0;
+      left: 0;
+      &::before{
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 0;
+        background: #ffffff;
+        animation: time 10000ms infinite linear;
+      }
+    }
+  }
+}
+
+.upcoming-item-enter-active,
+.upcoming-item-leave-active{
+  transition: all 0.5s;
+}
+.upcoming-item-enter-from{
+  opacity: 0;
+  transform: scale(1);
+}
+.upcoming-item-leave-to{
+  opacity: 0;
+  transform: scale(1.5);
+}
+
+
+@keyframes time{
+  0%{width: 0;}
+  100%{width: 100%;}
+}
+
+.btn-more{
+  padding: 10px 15px;
+  display: inline-flex;
+  align-items: center;
+  background: #149A03;
+  border-radius: 10px;
+  gap: 15px;
+  color: #ffffff;
+  @include font(20px, 30px);
+}
